@@ -8,7 +8,7 @@ excerpt: "Análise de Sentimentos, Twitter, Linguagem R"
 mathjax: "true"
 ---
 
-Esse post foi originalmente publicado por mim no LinkedIn [aqui](https://www.linkedin.com/pulse/an%C3%A1lise-de-sentimentos-sobre-o-joe-biden-46%C2%BA-eleito-dos-jos%C3%A9-carlos/).
+### Esse post foi originalmente publicado por mim no LinkedIn [aqui](https://www.linkedin.com/pulse/an%C3%A1lise-de-sentimentos-sobre-o-joe-biden-46%C2%BA-eleito-dos-jos%C3%A9-carlos/).
 
 Olá pessoal, tudo bem com vocês?
 
@@ -59,8 +59,11 @@ Feito tudo isso, vamos gerar uma wordcloud (palavras mais comum na massa de dado
 paleta = brewer.pal(8, "Dark2")
 wordcloud(tweet_cor, min.freq = 2, random.color = F, max.word = 100, random.order = F, colors = paleta, scale = c(5,1))
 ```
+Here's an image:
+<img src="{{ site.url }}{{ site.baseurl }}/images/post1-1.png" alt="linearly separable data">
 
-COLOCAR IMAGEM
+Here's another image using Kramdown:
+![alt]({{ site.url }}{{ site.baseurl }}/images/post1-1.jpg)
 
 Agora vamos plotar um dendograma, que nos mostra como os agrupamentos de algumas palavras são formadas dentro da nossa massa de tweets.
 
