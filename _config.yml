@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+n# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -12,7 +12,7 @@ locale                   : "pt-BR"
 title                    : "José Carlos"
 title_separator          : "-"
 name                     : "José Carlos"
-description              : "Portfólio de Data Science"
+description              : "Data Scientist, Engenheiro Mecânico e Nerd"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -86,7 +86,7 @@ analytics:
 author:
   name             : "José Carlos"
   avatar           : "/images/me.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Meu Portfólio de Data Science"
+  bio              : "Data Scientist, Engenheiro Mecânico e Nerd"
   location         : "Rondonópolis, MT"
   email            :
   uri              :
