@@ -1,4 +1,4 @@
-n# Welcome to Jekyll!
+# Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
@@ -12,7 +12,7 @@ locale                   : "pt-BR"
 title                    : "José Carlos"
 title_separator          : "-"
 name                     : "José Carlos"
-description              : "Data Scientist, Engenheiro Mecânico e Nerd."
+description              : "Engenheiro Mecânico, nerd e aspirante a data scientist"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -86,9 +86,9 @@ analytics:
 author:
   name             : "José Carlos"
   avatar           : "/images/me.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Scientist, Engenheiro Mecânico e Nerd."
-  location         : "Rondonópolis, MT"
-  email            : 
+  bio              : "Engenheiro Mecânico, nerd e aspirante a data scientist"
+  location         : "Rondonópolis, MT (BR)"
+  email            : "eng.jcfneto@gmail.com"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
@@ -101,9 +101,9 @@ author:
   gitlab           :
   google_plus      :
   keybase          :
-  instagram        : 
+  instagram        : "ferreiran"
   lastfm           :
-  linkedin         : "jcfneto"
+  linkedin         : "jcfneto" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
