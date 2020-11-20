@@ -2,8 +2,8 @@
 title: "Análise de Sentimentos Sobre o Joe Biden (46º Presidente Eleito dos EUA) no Twitter - Linguagem R"
 date: 2020-11-08
 tags: [análise de sentimentos, data science, twitter, linguagem R]
-header:
-  image: "/images/post1.png"
+# header:
+  # image: "/images/post1.png"
 excerpt: "Análise de Sentimentos, Twitter, Linguagem R"
 mathjax: "true"
 ---
