@@ -59,11 +59,7 @@ Feito tudo isso, vamos gerar uma wordcloud (palavras mais comum na massa de dado
 paleta = brewer.pal(8, "Dark2")
 wordcloud(tweet_cor, min.freq = 2, random.color = F, max.word = 100, random.order = F, colors = paleta, scale = c(5,1))
 ```
-Here's an image:
 <img src="{{ site.url }}{{ site.baseurl }}/images/post1-1.png" alt="linearly separable data">
-
-Here's another image using Kramdown:
-![alt]({{ site.url }}{{ site.baseurl }}/images/post1-1.jpg)
 
 Agora vamos plotar um dendograma, que nos mostra como os agrupamentos de algumas palavras são formadas dentro da nossa massa de tweets.
 
@@ -74,8 +70,7 @@ tweetscale = scale(tweet_den2 )
 tweetdist = dist(tweetscale , method = "euclidean")
 plot(hclust(tweetdist))
 ```
-
-COLOCAR IMAGEM
+<img src="{{ site.url }}{{ site.baseurl }}/images/post1-2.png" alt="linearly separable data">
 
 Agora vamos para a parte mais legal, que é de fato construir nossa análise em cima dos dados. Então, aqui nessa etapa, vamos submeter nossos tweets ao classificador de emoções que foi treinado com o algoritmo de machine learning naive Bayes.
 
@@ -104,8 +99,9 @@ Agora vamos ver os gráficos que conseguimos com os resultados da análise.
 
 O primeiro gráfico remete a classificação de emoções e o segundo é o classificador de polaridade.
 
+<img src="{{ site.url }}{{ site.baseurl }}/images/post1-3.png" alt="linearly separable data">
 
-COLOCAR IMAGENS
+<img src="{{ site.url }}{{ site.baseurl }}/images/post1-4.png" alt="linearly separable data">
 
 ### Conclusões
 
