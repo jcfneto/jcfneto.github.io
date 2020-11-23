@@ -1,10 +1,10 @@
 ---
 title: "Predição de Diabetes com Base em Medidas de Diagnóstico"
 date: 2020-11-23
-tags: [machine learning, data science, python]
+tags: [machine learning, data science, python, classificação]
 # header:
   # image: "/images/post1.png"
-excerpt: "Análise de Sentimentos, Twitter, Linguagem R"
+excerpt: "Machine Learning, Data Science, Python, Classificação"
 mathjax: "true"
 ---
 
@@ -14,4 +14,6 @@ O modelo será baseado em DADOS históricos, sendo que esses dados originalmente
 
 O dataset contém informações dos Pima.
 
-Os Pima são um grupo de nativos americanos que vivem em uma área que consiste no que agora é o centro e o sul do Arizona. A maioria da população das duas bandas sobreviventes de Akimel O'odham está baseada em duas reservas: Keli Akimel O'otham em a Comunidade Indígena de Gila River (GRIC) e On'k Akimel O'odham na Comunidade Indígena de Salt River Pima-Maricopa (SRPMIC).
+Os Pima são um povo nativo dos Estados Unidos da América que viviam às margens dos rios Gila e Sal, na parte sul do estado de Arizona.
+
+Você pode conferir o projeto direto do GutHub acessando [aqui](https://github.com/jcfneto/portfolio/blob/main/PredDiabetes.ipynb).
