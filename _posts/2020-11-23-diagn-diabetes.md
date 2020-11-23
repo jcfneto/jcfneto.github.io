@@ -16,4 +16,4 @@ O dataset contém informações dos Pima.
 
 Os Pima são um povo nativo dos Estados Unidos da América que viviam às margens dos rios Gila e Sal, na parte sul do estado de Arizona.
 
-Você pode conferir o projeto direto do GutHub acessando [aqui](https://github.com/jcfneto/portfolio/blob/main/PredDiabetes.ipynb).
+Você pode conferir o projeto direto do GitHub acessando [aqui](https://github.com/jcfneto/portfolio/blob/main/PredDiabetes.ipynb).
