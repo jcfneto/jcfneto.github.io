@@ -1,6 +1,6 @@
 ---
 title: "Tarefas de Classificação com MNIST"
-date: 2021-11-03
+date: 2022-01-01
 tags: [classification, data science, python, mnist]
 # header:
   # image: "/images/evolutionary-computation.jpg"
