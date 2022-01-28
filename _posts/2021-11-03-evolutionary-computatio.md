@@ -2,8 +2,8 @@
 title: "Implementação de Algoritmos Evolutivos e Meta Heurísticos"
 date: 2021-11-03
 tags: [evolutionary computation, data science, python, optimization]
-# header:
-  # image: "/images/evolutionary-computation.jpg"
+header:
+  image: "/images/evolutionary-computation.jpg"
 excerpt: "Evolutionary Computation, Data Science, Python, Optimization"
 mathjax: "true"
 ---
