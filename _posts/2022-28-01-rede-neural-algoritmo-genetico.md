@@ -1,0 +1,76 @@
+---
+title: "Treinando uma Rede Neural MLP (Multilayer Perceptron) Utilizando Algoritmos Genéticos (GA) do 0 ao Deploy - Parte 1"
+date: 2022-28-01
+tags: [neural network, genetic algorithm, python]
+# header:
+  # image: "/images/evolutionary-computation.jpg"
+excerpt: "Genetic Algorithm, Neural Network, Python"
+mathjax: "true"
+---
+
+# Parte 1
+
+Este é o primeiro artigo de uma série de artigos que irei escrever e que damos início hoje. E o objetivo desta série é: **treinar uma Rede Neural MLP (Multilayer Perceptron) utilizando Algoritmos Genéticos (GA) e fazer o Deploy deste modelo.**
+
+E claro,  vamos unir teoria e prática, e cada artigo estaremos dando um passo em direção ao nosso objetivo. E para isso vamos focar nossos esforços em dissecar, porém não esgotar, os assuntos sobre Algoritmos Genéticos e Redes Neurais. 
+
+Tanto os GAs quanto as MLPs, veremos passo a passo, e implementaremos utilizando linguagem Python. 
+
+Os artigos terão estruturas modulares, onde falaremos dos conceitos biológicos (estes bem pouco) e matemáticos, além de implementá-los.
+
+As minhas principais referências, a princípio, serão os seguintes livros: [Redes Neurais Princípios e Práticas](https://www.amazon.com.br/Redes-Neurais-Princ%C3%ADpios-Simon-Haykin/dp/8573077182/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=33XEDFL2PKI8I&keywords=Redes+neurais+simon+haykin&qid=1643108726&sprefix=redes+neurais+simon+hayki%2Caps%2C155&sr=8-1&ufe=app_do%3Aamzn1.fos.db68964d-7c0e-4bb2-a95c-e5cb9e32eb12), [Manual de Computação Evolutiva e Metaheurística](https://www.amazon.com.br/Computa%C3%A7%C3%A3o-Evolutiva-Meta-heur%C3%ADstica-Ant%C3%B4nio-Gaspar-Cunha/dp/8542300467/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1EFP3Z8WWLMZ8&keywords=Manual+de+Computa%C3%A7%C3%A3o+Evolutiva+e+Metaheur%C3%ADstica&qid=1643108744&sprefix=manual+de+computa%C3%A7%C3%A3o+evolutiva+e+metaheur%C3%ADstica%2Caps%2C139&sr=8-1&ufe=app_do%3Aamzn1.fos.6121c6c4-c969-43ae-92f7-cc248fc6181d), [Algoritmos Genéticos](https://www.amazon.com.br/Algoritmos-Gen%C3%A9ticos-Ricardo-Linden/dp/8539901951/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3SJ47JJZMLKJK&keywords=Algoritmos+Gen%C3%A9ticos&qid=1643108773&sprefix=algoritmos+gen%C3%A9ticos%2Caps%2C207&sr=8-1&ufe=app_do%3Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9).
+
+Algumas abreviações que vamos utilizar:
+
+- EA: Algoritmo Evolucionário
+- CI: Inteligência Computacional
+- GA: Algoritmo Genético
+- ANN: Redes Neurais Artificiais
+- MLP: Perceptron Multicamadas
+
+Como **dica,** para você não se perder tanto neste começo, sugiro que você pesquise duas coisinhas: o que é [otimização](https://pt.wikipedia.org/wiki/Otimiza%C3%A7%C3%A3o) e o que são [heurísticas](https://pt.wikipedia.org/wiki/Heur%C3%ADstica_(computa%C3%A7%C3%A3o)). 
+
+Tendo dito tudo isso, vamos começar nossa trajetória com as GAs respondendo a seguinte pergunta:
+
+## O que são algoritmos evolucionários?
+
+São algoritmos que utilizam modelos computacionais inspirados em processos evolutivos naturais para solução de problemas complexos. São decorrentes das ações de indivíduos que interagem entre si e com o ambiente, produzindo, através destas interações, uma inteligência coletiva que visa solucionar estes problemas. Em geral, estes indivíduos executam tarefas que são muito simples, porém, em um contexto de coletividade, conseguem resolver problemas de grande complexidade.
+
+A evolução das espécies, a busca por alimento por uma colônia de abelhas ou de pássaros, a resposta de um agente imunológico à invasão de agentes patógenos, essencialmente envolvem a busca em espaços de alta dimensão em funções de alta complexidade, exigindo cooperação dos indivíduos que compõe este ambiente a uma constante adaptação. 
+
+Tendo isto em vista, acredita-se que é possível nos inspirarmos nestes mecanismos, de uma forma que construa-se outros mecanismos computacionais capazes de solucionar problemas de alta complexidade.
+
+## E o que são Algoritmos Genéticos?
+
+Como vocês já podem ter percebido, os GAs fazem parte dos algoritmos evolucionários, e tratam-se de uma técnica de busca que é uma metáfora para o **processo biológico de evolução natural das espécies e da genética** (Oi, Darwin. Oi Mendel, tudo bem?). 
+
+Os GAs nada mais são do que técnicas **heurísticas** para **otimização** global.
+
+> Para termos uma noção geral, a otimização é o campo de conhecimentos cujas técnicas visam determinar os extremos (máximos ou mínimos) de funções, em domínios determinados. (Esta definição nos ajuda a entender, já neste momento, a razão pela qual escolhemos está técnica para treinarmos a nossa ANN).
+
+“Como transformar as ideias de Darwin em algoritmos?” (Holland, 2000)
+
+A ideia principal é de que, o processo evolutivo colabora para que se tenha um conjunto de indivíduos que são adaptados ao meio ambiente onde se encontram. Darwin apresentou que, a evolução natural recorre a dois mecanismos básicos: a seleção e a reprodução com variação.
+
+De forma resumida, a seleção vai garantir que os indivíduos que melhor se adaptarem ao meio ambiente também vão possuir uma maior probabilidade de sobrevivência, e consequentemente, vão propagar suas características às gerações futuras. E a reprodução com variação vai garantir que, os descendentes destes indivíduos não sejam uma cópia fiel deu seus progenitores. Isso gera, na população, ao longo das gerações, o que chamamos de evolução.
+
+Um destaque é preciso ser feito: a evolução natural **não** é um processo que se destina exclusivamente em obter uma solução ótima. O que esta o faz é uma competição entre os indivíduos e pelo processo de sobrevivência, apenas os mais aptos **tendem** a sobreviverem. É possível que, embora muito pouco comum, uma geração possa ter indivíduos piores do que as gerações passadas.
+
+Mas, nestes algoritmos, o que indica que um indivíduo é bom ou não? Como já mencionado na descrição de otimização, utilizamos funções (função esta que queremos otimizar) para calcular o que chamamos de **avaliação.** E, a partir desta avaliação, dizemos se um indivíduo é bom ou não. 
+
+Da mesma forma como acontece na natureza, as informações são codificadas nos **cromossomos** e a reprodução fará com que a população evolua. Nos GAs, a reprodução ocorre de forma equivalente a **reprodução sexuada** justamente para garantir que, haja combinação de dois genomas diferentes, provocando assim diversidade dentro da população. Além da reprodução, os GAs contam também com o processo de **mutação,** estes ocorrem em menor frequência se comparado a reprodução, porém, agem para que a população não se torne homogênea em decorrência da reprodução dos melhores indivíduos. 
+
+A reprodução e a mutação serão aplicadas nos indivíduos que foram selecionados, sendo que os mais aptos são selecionados com maior frequência justamente para manter as melhores características na população. Por conta disso, os indivíduos menos aptos são descartados, o que gera uma rápida convergência no algoritmo. Nós chamamos este fenômeno de **convergência genética**, caracterizada por baixa diversidade na população. Quando isso ocorre, a reprodução não irá gerar diversidade, ficando a cargo apenas da mutação para que isso ocorra. Quanto maior for a perda de diversidade mais rápido será a convergência.
+
+## O que veremos na Parte 2?
+
+Muito do que foi abordado nesta parte ainda pode te deixar um pouco confuso, porém, na Parte 2 iremos nos aprofundar em muitos termos que foram introduzidos aqui. Então, para a próxima parte você pode esperar por:
+
+- Terminologia
+- O Teorema da Inexistência de Almoço Grátis
+- Busca
+- Esquema/estrutura de um GA
+
+Além da **dica** que deixei no início deste artigo, deixo mais umas dicas para vocês estudarem: Teoria da Evolução e Genética Básica. Para isso, deixo este [link](https://www.algoritmosgeneticos.com.br/GA_Cap2.ppt) com o material do Professor Linden, que é uma das minhas referências nesta primeira parte sobre GAs.
+
+Até a próxima!
