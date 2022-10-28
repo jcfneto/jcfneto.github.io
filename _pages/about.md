@@ -26,7 +26,7 @@ Algumas das ferramentas que domíno são:
 - Python
 - R
 - SQL
-- Bancos relacionais e não relacionais (SQLite, Postegres, MongoDB, entre outros)
+- Bancos relacionais e não relacionais (SQLite, Postgres, MongoDB, entre outros)
 - Django
 - Desenvolvimento de REST APIs
 - AWS (Lambda, S3, EC2, SageMaker)
