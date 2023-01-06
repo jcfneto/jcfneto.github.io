@@ -12,4 +12,4 @@ A computação evolucionária (CE) é a otimização global inspirada na evoluç
 
 Portanto, implementei alguns dos muitos algoritmos existentes. São eles: Clonal Selection Algorithm, Differential Evolution, Genetic Algorithm, Particle Swarm Optimization and Artificial Bee Colony.
 
-Você pode conferir os algoritmos diretamento do GitHub, acessando [aqui](https://github.com/jcfneto/EvolutionaryMetaheuristicComputing).
+Você pode conferir os algoritmos diretamento do GitHub, acessando [aqui](https://github.com/jcfneto/evolutionary-metaheuristic-computing).
