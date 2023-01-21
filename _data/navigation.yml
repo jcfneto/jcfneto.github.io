@@ -4,8 +4,8 @@ main:
     url: /sobre/
   - title: "Meus Projetos"
     url: /meus-projetos/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  - title: "Currículo"
+    url: https://jcfneto.github.io/resume/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
