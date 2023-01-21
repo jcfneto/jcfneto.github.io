@@ -2,8 +2,8 @@
 main:
   - title: "Sobre"
     url: /sobre/
-  - title: "Meus Projetos"
-    url: /meus-projetos/
+#   - title: "Meus Projetos"
+#     url: /meus-projetos/
   - title: "Currículo"
     url: https://jcfneto.github.io/resume/
   # - title: "Sample Posts"
