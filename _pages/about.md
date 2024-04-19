@@ -5,32 +5,8 @@ permalink: /sobre/
   # image: "/images/header.png"
 ---
 
-Me chamo José Carlos, nasci em Goiás e vivi por lá até meus 11 anos, me mudei para o Mato Grosso, e em 2021 me mudei para Minas Gerais. Sempre fui muito apaixonado por tecnologia e por querer saber como tudo funcionava, e essa curiosidade me levou a fazer um curso de graduação em engenharia mecânica (UFMT). 
+Como Cientista de Dados apaixonado por Machine Learning, sempre busquei aprimorar minhas habilidades e conhecimentos nessa área fascinante. Essa jornada me levou a conquistar um mestrado na Universidade Federal de Lavras (UFLA), com foco em Processamento de Linguagem Natural, onde explorei profundamente técnicas e teorias que estão na vanguarda deste campo.
 
-Depois de formado, trabalhei como projetista, desenvolvendo máquinas e implementos agrícolas/industriais. Para solucionar os problemas de desenvolvimento desses equipamentos, utilizei algumas tecnologias e técnicas, são elas: 
+Minha experiência profissional é marcada pela resolução de problemas complexos e geração de valor significativo através da análise de dados, modelagem estatística, machine learning, otimização matemática e desenvolvimento de software. Sou um profissional autodidata com uma forte base científica, uma curiosidade incansável e um senso crítico aguçado, qualidades que me permitem abordar desafios de maneira inovadora.
 
-* Para modelagem 3D utilizava o software Solidworks
-* Para análise de elementos finitos (estático) utilizava também o Solidworks
-* Para cálculos simples utilizava o bom e velho conjunto: papel, caneta e calculadora
-* Para cálculos mais "complexos" utilizava o excel ou o SciLab
-* Para gerir os projetos já utilizei o excel, MS Project, trello e pipefy
-
-Esse conjunto de ferramentas me fizeram desenvolver coisas incríveis.
-
-Em meados de 2020 (no auge da pandemia) comecei a fazer cursos de programação em Python, até então meu único contato com programação foi na faculdade, com C++. Conforme eu ia avançando nos estudos e me aproximando da área de dados eu me tornava mais apaixonado por essa área, e por isso decidi que iria migrar de carreira.
-
-Investi em uma formação na carreira de Cientista de Dados na Data Science Academy e em um mestrado (minha linha de pesquisa é em Redes Neurais Granulares e Aprendizado Profundo em Tempo Real). E por isso criei esse espaço para documentar meus trabalhos e meu progresso no decorrer dos estudos.
-
-Algumas das ferramentas que domíno são:
-
-- Python
-- R
-- SQL
-- Bancos relacionais e não relacionais (SQLite, Postgres, MongoDB, entre outros)
-- Django
-- Desenvolvimento de REST APIs
-- AWS (Lambda, S3, EC2, SageMaker)
-- Airflow
-- Inteligência Computacional (Computação Fuzzy, Computação Neural e Computação Evolutiva)
-
-Fique a vontade para entrar em contato comigo e "nerdiar" um pouco.
+Além da minha expertise técnica, destaco-me pela minha habilidade comunicativa, capaz de traduzir complexidades técnicas para diversos públicos, facilitando a compreensão e a colaboração interdisciplinar.
