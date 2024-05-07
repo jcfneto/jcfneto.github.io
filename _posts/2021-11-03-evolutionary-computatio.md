@@ -1,5 +1,5 @@
 ---
-title: "Implementação de Algoritmos Evolutivos e Meta Heurísticos"
+title: "Implementation of Evolutionary Algorithms and Metaheuristics"
 date: 2021-11-03
 tags: [evolutionary computation, data science, python, optimization]
 # header:
@@ -8,8 +8,8 @@ excerpt: "Evolutionary Computation, Data Science, Python, Optimization"
 mathjax: "true"
 ---
 
-A computação evolucionária (CE) é a otimização global inspirada na evolução biológica. Constitui uma família de algoritmos e é um ramo da inteligência computacional e da computação natural. Sistemas de CE resolvem problemas via populações, erro e acerto, meta-heurística, ou otimização estocástica. Um conjunto inicial de soluções candidatas é gerado e atualizado iterativamente: remoção das soluções menos desejadas, inserção de ruído. No jargão da área, uma população de soluções é sujeita à seleção natural ou seleção artificial e mutação, e portanto evolui e adapta, i.e. aumenta o fitness (função quantiza quão adaptada/desejada é a solução). A CE é popular na IC por resultar soluções otimizadas em um espectro largo de contextos, há muitas variantes e extensões para problemas e estruturas de dados específicas.
+Evolutionary computing (EC) is global optimization inspired by biological evolution. It constitutes a family of algorithms and is a branch of computational intelligence and natural computing. EC systems solve problems via populations, trial and error, metaheuristics, or stochastic optimization. An initial set of candidate solutions is generated and iteratively updated: removal of less desired solutions, and the insertion of noise. In the jargon of the field, a population of solutions undergoes natural selection or artificial selection and mutation, thus evolving and adapting, i.e., increasing fitness (a function that quantifies how adapted/desirable a solution is). EC is popular in AI because it yields optimized solutions across a wide spectrum of contexts, with many variants and extensions for specific problems and data structures.
 
-Portanto, implementei alguns dos muitos algoritmos existentes. São eles: Clonal Selection Algorithm, Differential Evolution, Genetic Algorithm, Particle Swarm Optimization and Artificial Bee Colony.
+Therefore, I have implemented some of the many existing algorithms. They are Clonal Selection Algorithm, Differential Evolution, Genetic Algorithm, Particle Swarm Optimization, and Artificial Bee Colony.
 
-Você pode conferir os algoritmos diretamento do GitHub, acessando [aqui](https://github.com/jcfneto/evolutionary-metaheuristic-computing).
+You can check out the algorithms directly on GitHub by clicking [here](https://github.com/jcfneto/evolutionary-metaheuristic-computing).
