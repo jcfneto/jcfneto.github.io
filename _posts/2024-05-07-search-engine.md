@@ -16,7 +16,7 @@ The objective of the practical work is to implement and evaluate information ret
 - To vectorize the documents (and queries), use two different embeddings encodings: TF-IDF and Sentence Transformers.
 - For indexing the documents, try one or more indices available in FAISS.
 - To perform the queries and obtain their results, use cosine similarity.
-- For result evaluation, create a module to return the following metrics. The module should take as input the identification of the queries along with the identifications of the documents in their results, as indicated by the reference collection template and your algorithm, ordered by relevance, and return values for the Precision and Recall metrics. The module should generate the Precision x Recall table for 11 levels of recall, so that a single chart can be created with the average values across all queries in the collection. In addition, also calculate the values for the P@5 and P@10 metrics, the average MRR(Q) considering threshold Sh = 5, and plot the Precision-R histogram for the first 20 queries.
+- For result evaluation, create a module to return the following metrics. The module should take as input the identification of the queries along with the identifications of the documents in their results, as indicated by the reference collection template and your algorithm, ordered by relevance, and return values for the Precision and Recall metrics. The module should generate the Precision x Recall table for 11 levels of recall so that a single chart can be created with the average values across all queries in the collection. In addition, also calculate the values for the P@5 and P@10 metrics, the average MRR(Q) considering threshold Sh = 5, and plot the Precision-R histogram for the first 20 queries.
 - Evaluate each embedding encoding separately, present their respective Precision x Recall charts, and show the results for the other metrics described above.
 
 
@@ -24,11 +24,11 @@ The objective of the practical work is to implement and evaluate information ret
 
 Information Retrieval (IR) is a field of computing that explores techniques for representing, storing, organizing, and accessing information. The main objectives of this field are to propose and develop good techniques for text indexing and query mechanisms to search for information in a document collection (Baeza-Yates et al. 1999).
 
-IR models aim to satisfy user needs by retrieving documents that meet their request. To do this, these models assign a numerical score to each document and rank them according to this score. This score indicates the document's degree of relevance to the user's query (Singhal et al. 2001).
+IR models aim to satisfy user needs by retrieving documents that meet their requests. To do this, these models assign a numerical score to each document and rank them according to this score. This score indicates the document's degree of relevance to the user's query (Singhal et al. 2001).
 
 This work presents a comparison of some modeling techniques applied to the Cystic Fibrosis collection. This collection contains 1,239 documents published between 1974 and 1979, as well as other data related to each of these publications.
 
-Section 2 discusses the text vectorization representation techniques used. Section 3 presents the combinations of techniques used to compose each strategy. Section 4 describes the hardware and tools used. Section 5 presents the results obtained. Finally, Section 6 draws conclusions on the results obtained.
+Section 2 discusses the text vectorization representation techniques used. Section 3 presents the combinations of techniques used to compose each strategy. Section 4 describes the hardware and tools used. Section 5 presents the results obtained. Finally, Section 6 concludes the results obtained.
 
 
 ## 2. Vector Representation
@@ -37,7 +37,7 @@ Search engines can be defined, according to (Croft et al. 2010), as the use of i
 
 Term Frequency – Inverse Document Frequency (TF-IDF) is a technique within vector modeling that produces a vector representation of a text, and this strategy is based on weights. The TF component is based on the frequency of each word in each document in the collection, while the IDF component relates to the number of documents in which a word appears (Croft et al. 2010).
 
-A document can be represented by the vector $$\vec{d_j} = (w_{1,j}, w_{2,j},..., w_{i,j})$$, where the $tf$ component of term $$k_i$$ in document $$d_j$$ can be obtained by:
+A document can be represented by the vector $$\vec{d_j} = (w_{1,j}, w_{2,j},..., w_{i,j})$$, where the $$tf$$ component of term $$k_i$$ in document $$d_j$$ can be obtained by:
 
 $$
 \begin{equation}
