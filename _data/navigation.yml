@@ -1,10 +1,10 @@
 # main links
 main:
-  - title: "Sobre"
-    url: /sobre/
+  - title: "About"
+    url: /about/
 #   - title: "Meus Projetos"
 #     url: /meus-projetos/
-  - title: "Currículo"
+  - title: "Resume"
     url: https://jcfneto.github.io/resume/
   # - title: "Sample Posts"
   #   url: /year-archive/

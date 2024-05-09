@@ -1,12 +1,12 @@
 ---
-title: "Sobre"
-permalink: /sobre/
+title: "About"
+permalink: /about/
 # header:
   # image: "/images/header.png"
 ---
 
-Como Cientista de Dados apaixonado por Machine Learning, sempre busquei aprimorar minhas habilidades e conhecimentos nessa área fascinante. Essa jornada me levou a conquistar um mestrado na Universidade Federal de Lavras (UFLA), com foco em Processamento de Linguagem Natural, onde explorei profundamente técnicas e teorias que estão na vanguarda deste campo.
+As a Data Scientist passionate about Machine Learning, I have always sought to enhance my skills and knowledge in this fascinating area. This journey led me to earn a master's degree from the Federal University of Lavras (UFLA), with a focus on Natural Language Processing, where I deeply explored techniques and theories at the forefront of this field.
 
-Minha experiência profissional é marcada pela resolução de problemas complexos e geração de valor significativo através da análise de dados, modelagem estatística, machine learning, otimização matemática e desenvolvimento de software. Sou um profissional autodidata com uma forte base científica, uma curiosidade incansável e um senso crítico aguçado, qualidades que me permitem abordar desafios de maneira inovadora.
+My professional experience is marked by solving complex problems and generating significant value through data analysis, statistical modeling, machine learning, mathematical optimization, and software development. I am a self-taught professional with a strong scientific background, relentless curiosity, and sharp critical thinking, qualities that enable me to approach challenges innovatively.
 
-Além da minha expertise técnica, destaco-me pela minha habilidade comunicativa, capaz de traduzir complexidades técnicas para diversos públicos, facilitando a compreensão e a colaboração interdisciplinar.
+In addition to my technical expertise, I stand out for my communication skills, capable of translating technical complexities to diverse audiences, facilitating understanding and interdisciplinary collaboration.

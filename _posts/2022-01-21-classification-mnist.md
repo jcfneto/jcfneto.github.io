@@ -1,5 +1,5 @@
 ---
-title: "Tarefas de Classificação com MNIST"
+title: "Classification Tasks with MNIST"
 date: 2022-01-21
 tags: [classification, data science, python, mnist]
 # header:
@@ -8,8 +8,8 @@ excerpt: "Classification, Data Science, Python, MNIST"
 mathjax: "true"
 ---
 
-Faz tanto tempo que não apareço aqui pelo meu portfólio/site/repositório que decidi trazer algo mais leve, para nos divertirmos. Vamos usar o tão famoso dataset MNIST e aplicá-lo para tarefas de classificação.
+It's been so long since I last updated my portfolio/site/repository that I decided to bring something lighter for us to enjoy. Let's use the famous MNIST dataset and apply it to classification tasks.
 
-Então, vamos explorar tarefas de classificação binária, multiclasse e multioutput.
+So, let's explore binary, multiclass, and multi-output classification tasks.
 
-Link do [Notebook](https://github.com/jcfneto/portfolio/blob/main/MNIST.ipynb).
+[Notebook](https://github.com/jcfneto/portfolio/blob/main/MNIST.ipynb).

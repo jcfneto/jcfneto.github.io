@@ -8,11 +8,11 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "pt-BR"
+locale                   : "en-US"
 title                    : "José Carlos"
 title_separator          : "-"
 name                     : "José Carlos"
-description              : "Cientista de Dados | MSc"
+description              : "Data Scientist | MSc"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -86,7 +86,7 @@ analytics:
 author:
   name             : "José Carlos"
   avatar           : "/images/me.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Cientista de Dados | MSc"
+  bio              : "Data Scientist | MSc"
   location         : "Lavras, MG (BR)"
   email            : "eng.jcfneto@gmail.com"
   uri              :
