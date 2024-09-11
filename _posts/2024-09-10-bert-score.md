@@ -4,6 +4,9 @@ date: 2024-09-10
 tags: [nlp, llm, evaluation, bertscore]
 excerpt: "BERTScore"
 use_math: true
+header:
+  overlay_image: https://plone.ufpb.br/labeet/contents/paginas/acervo-brazinst/copy_of_cordofones/berimbau-de-barriga/berimbauquilombodascamelias.jpg
+  overlay_filter: 0.5
 ---
 
 
