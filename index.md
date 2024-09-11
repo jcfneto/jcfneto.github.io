@@ -1,5 +1,5 @@
 ---
-title: About
+title:
 layout: single
 author_profile: true
 header:
@@ -7,6 +7,8 @@ header:
   overlay_filter: false
   excerpt: ""
 ---
+
+## About
 
 As a Data Scientist passionate about Machine Learning, I have always sought to enhance my skills and knowledge in this fascinating area. This journey led me to earn a master's degree from the Federal University of Lavras (UFLA), with a focus on Natural Language Processing, where I deeply explored techniques and theories at the forefront of this field.
 
