@@ -18,7 +18,7 @@ The only requirement to use this evaluation metric is having a set of question-a
 
 **BERTScore** allows you to assess a tokenized reference sentence— in our case, the expected answer— against a tokenized candidate sentence, which in this case is the answer provided by the LLM. This is done by extracting contextual embeddings for each token from both sentences. The calculations use **cosine similarity weighted by inverse document frequency (IDF)**.
 
-The embeddings are extracted from BERT (include the reference to the BERT paper here), and the calculations performed with these embeddings are described below:
+The embeddings are extracted from [BERT](https://arxiv.org/pdf/1810.04805), and the calculations performed with these embeddings are described below:
 
 - **Recall ($R_{BERT}$)**: each token in the reference sentence $x$ is compared with all the tokens in the candidate sentence $\hat{x}$. The goal is to find, for each token $x_i$ in $x$, the most similar token in $\hat{x}$, as per the equation below.
 
