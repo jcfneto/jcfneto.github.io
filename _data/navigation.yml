@@ -15,3 +15,6 @@ main:
 
   - title: "Posts"
     url: /posts/
+  
+  - title: "Resume"
+    url: https://jcfneto.github.io/resume/
