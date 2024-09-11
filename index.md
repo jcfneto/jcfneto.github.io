@@ -3,7 +3,7 @@ title: About
 layout: single
 author_profile: true
 header:
-  overlay_image: "header.png"
+  overlay_image: https://cdn.universoracionalista.org/wp-content/uploads/2016/02/darwin.png
   overlay_filter: false
   excerpt: ""
 ---
