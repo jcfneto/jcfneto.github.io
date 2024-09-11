@@ -41,7 +41,7 @@ Note that in the equations for $R_{BERT}$ and $P_{BERT}$, there is a weighting b
 $$\text{idf}(w) = - \log \left( \frac{1}{M} \sum_{i=1}^{M} \mathbb{I}[w \in x^{(i)}] \right)$$
 </div>
 
-Where $M$ is the number of sentences in the reference corpus, and $\mathbb{I}[w \in x^{(i)}]$ is an indicator function that equals 1 if the token www is present in sentence $x^{(i)}$, and 0 otherwise. This results in a measure that gives greater weight to words that appear less frequently in the corpus.
+Where $M$ is the number of sentences in the reference corpus, and $\mathbb{I}[w \in x^{(i)}]$ is an indicator function that equals 1 if the token $w$ is present in sentence $x^{(i)}$, and 0 otherwise. This results in a measure that gives greater weight to words that appear less frequently in the corpus.
 
 You can easily use this in Python, just install the library with:
 
