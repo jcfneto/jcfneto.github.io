@@ -4,6 +4,9 @@ date: 2024-05-07
 tags: [genetic algorithm, python]
 excerpt: "FAISS, Python, Search Engine"
 use_math: "true"
+header:
+  overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
+  overlay_filter: 0.5
 ---
 
 ## What Needs to Be Done

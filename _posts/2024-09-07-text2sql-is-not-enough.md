@@ -4,6 +4,9 @@ date: 2024-09-07
 tags: [text2sq, rag, tag, gen-ai, nlp]
 excerpt: "Text2SQL is not enough?"
 use_math: true
+header:
+  overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
+  overlay_filter: 0.5
 ---
 
 If you're here, you probably already know what Text2SQL means, but if you don’t, I’ll explain it briefly: Text2SQL is a language model capable of converting a natural language query into a structured SQL query. For example, a natural language query like "What are the songs by Judas Priest from the Painkiller album?" can be translated into:

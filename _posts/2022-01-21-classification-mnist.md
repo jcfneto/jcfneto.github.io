@@ -2,8 +2,9 @@
 title: "Classification Tasks with MNIST"
 date: 2022-01-21
 tags: [classification, data science, python, mnist]
-# header:
-  # image: "/images/evolutionary-computation.jpg"
+header:
+  overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
+  overlay_filter: 0.5
 excerpt: "Classification, Data Science, Python, MNIST"
 use_math: "true"
 ---
