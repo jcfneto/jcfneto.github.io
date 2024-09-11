@@ -2,10 +2,8 @@
 title: "Document Search Engine with FAISS"
 date: 2024-05-07
 tags: [genetic algorithm, python]
-# header:
-#   overlay_image: "/images/ga-ann.png"
 excerpt: "FAISS, Python, Search Engine"
-mathjax: "true"
+use_math: "true"
 ---
 
 ## What Needs to Be Done
@@ -39,6 +37,7 @@ Term Frequency – Inverse Document Frequency (TF-IDF) is a technique within vec
 
 A document can be represented by the vector $$\vec{d_j} = (w_{1,j}, w_{2,j},..., w_{i,j})$$, where the $$tf$$ component of term $$k_i$$ in document $$d_j$$ can be obtained by:
 
+<div>
 $$
 \begin{equation}
     tf_{i,j} = \left\{\begin{matrix}
@@ -47,18 +46,21 @@ $$
                     \end{matrix}\right.
 \end{equation}
 $$
+</div>
 
 Where $$f_{i,j}$$ represents the occurrence frequency of a term $$k_i$$ in document $$d_j$$. The IDF can be obtained by:
 
+<div>
 $$
 \begin{equation}
     idf_i = log \frac{N}{n_i}
 \end{equation}
 $$
+</div>
 
 Where $$N$$ is the total number of documents in a collection, and $$n_i$$ is the number of documents where term $$k_i$$ appears. Therefore, the combination of the TF and IDF components produces weights as shown in the following equation:
 
-
+<div>
 $$
 \begin{equation}
     w_{i,j} = \left\{\begin{matrix}
@@ -67,6 +69,7 @@ $$
     \end{matrix}\right.
 \end{equation}
 $$
+</div>
 
 Another form of modeling is semantic modeling. One of the more recent techniques of this type of modeling is to use the BERT model (Bidirectional Encoder Representations from Transformers) to produce word vectors that capture their meaning in the context in which they are inserted.
 
@@ -103,11 +106,13 @@ Flat indexing search is conducted by calculating the similarity between all docu
 
 The ranking function to determine the relevance of a document given a query will be obtained using cosine similarity, according to the following equation:
 
+</div>
 $$
 \begin{equation}
     sim(\vec{q}, \vec{d_j}) = \frac{\vec{q} \bullet \vec{d_j} }{|\vec{q}| \times |\vec{d_j}|}
 \end{equation}
 $$
+</div>
 
 The adopted strategies are evaluated through precision, recall, precision in 5 and 10 retrieved documents (P@5 and P@10), precision vs. recall curve, precision-R histogram, and Mean Reciprocal Rank.
 

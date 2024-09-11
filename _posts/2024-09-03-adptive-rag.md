@@ -2,10 +2,8 @@
 title: "Adptive-RAG"
 date: 2024-09-03
 tags: [rag, gen-ai, nlp]
-# header:
-#   overlay_image: "/images/..."
 excerpt: "Adptive-RAG"
-mathjax: true
+use_math: true
 ---
 
 RAG (Retrieval Augmented Generation) is a technique used to improve the performance of language models. It combines the power of generative language with the ability to retrieve relevant information from a text repository, generating more accurate and relevant responses.

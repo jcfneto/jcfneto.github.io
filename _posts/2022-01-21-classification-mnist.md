@@ -5,7 +5,7 @@ tags: [classification, data science, python, mnist]
 # header:
   # image: "/images/evolutionary-computation.jpg"
 excerpt: "Classification, Data Science, Python, MNIST"
-mathjax: "true"
+use_math: "true"
 ---
 
 It's been so long since I last updated my portfolio/site/repository that I decided to bring something lighter for us to enjoy. Let's use the famous MNIST dataset and apply it to classification tasks.

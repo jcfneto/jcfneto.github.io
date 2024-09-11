@@ -2,10 +2,8 @@
 title: "MetaEvolv: Evolutionary Metaheuristic Optimization in Python"
 date: 2024-08-17
 tags: [genetic algorithm, evolutionary computing, metaheuristics, python]
-# header:
-#   overlay_image: "/images/metaevolv-banner.png"
 excerpt: "Introducing MetaEvolv, a Python library for evolutionary metaheuristic optimization algorithms."
-mathjax: true
+use_math: true
 ---
 
 ## MetaEvolv
