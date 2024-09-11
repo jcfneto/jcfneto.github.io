@@ -2,12 +2,9 @@
 layout: single
 author_profile: true
 header:
-  overlay_image: https://cdn.universoracionalista.org/wp-content/uploads/2016/02/darwin.png
-  overlay_filter: false
-  excerpt: ""
+  overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
+  overlay_filter: 0.5
 ---
-
-## About
 
 As a Data Scientist passionate about Machine Learning, I have always sought to enhance my skills and knowledge in this fascinating area. This journey led me to earn a master's degree from the Federal University of Lavras (UFLA), with a focus on Natural Language Processing, where I deeply explored techniques and theories at the forefront of this field.
 
