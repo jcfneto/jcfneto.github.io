@@ -2,7 +2,7 @@
 title: "Text2SQL is not enough?"
 date: 2024-09-07
 tags: [text2sq, rag, tag, gen-ai, nlp]
-excerpt: "Text2SQL is not enough?"
+excerpt: "Is it really not enough?"
 use_math: true
 header:
   overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp

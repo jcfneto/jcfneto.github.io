@@ -2,7 +2,7 @@
 title: "Adptive-RAG"
 date: 2024-09-03
 tags: [rag, gen-ai, nlp]
-excerpt: "Adptive-RAG"
+excerpt: "Standard RAG may not be sufficient"
 use_math: true
 header:
   overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
