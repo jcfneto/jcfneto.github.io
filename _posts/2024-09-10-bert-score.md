@@ -5,7 +5,7 @@ tags: [nlp, llm, evaluation, bertscore]
 excerpt: "BERTScore"
 use_math: true
 header:
-  overlay_image: https://plone.ufpb.br/labeet/contents/paginas/acervo-brazinst/copy_of_cordofones/berimbau-de-barriga/berimbauquilombodascamelias.jpg
+  overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
   overlay_filter: 0.5
 ---
 
