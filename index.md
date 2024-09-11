@@ -3,8 +3,8 @@ title: About
 layout: single
 author_profile: true
 header:
-  overlay_image: "/images/header.png"
-  overlay_filter: 0 #
+  overlay_image: "images/header.png"
+  overlay_filter: 0
   exceprt: ""                                                          
 ---
 
@@ -14,7 +14,7 @@ My professional experience is marked by solving complex problems and generating 
 
 In addition to my technical expertise, I stand out for my communication skills, capable of translating technical complexities to diverse audiences, facilitating understanding and interdisciplinary collaboration.
 
-You need to know that I'm also a huge fan of heavy metal, especially Judas Priest (trust me, I'm a HUGE fan of that band), playing CS2, and staying at home.
+You should know that I'm also a huge fan of heavy metal, especially Judas Priest (trust me, I'm a HUGE fan of that band), playing CS2, and staying at home.
 
 <div style="text-align: center;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/C7mREYjstzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
