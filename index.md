@@ -3,9 +3,9 @@ title: About
 layout: single
 author_profile: true
 header:
-  overlay_image: "images/header.png"
-  overlay_filter: 0
-  exceprt: ""                                                          
+  overlay_image: "header.png"
+  overlay_filter: false
+  excerpt: ""
 ---
 
 As a Data Scientist passionate about Machine Learning, I have always sought to enhance my skills and knowledge in this fascinating area. This journey led me to earn a master's degree from the Federal University of Lavras (UFLA), with a focus on Natural Language Processing, where I deeply explored techniques and theories at the forefront of this field.
