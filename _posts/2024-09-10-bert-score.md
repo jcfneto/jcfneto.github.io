@@ -76,10 +76,10 @@ Notice that among the candidates, the first is correct, providing a good answer 
 These three candidates produced the following metrics:
 
 | Candidate | Recall | Precision | F1 |
-| --- | --- | --- | --- |
-| 1 | 0.67 | 0.666 | 0.668 |
+| :---: | :---: | :---: | :---: |
+| 1 | 0.670 | 0.666 | 0.668 |
 | 2 | 0.434 | 0.377 | 0.406 |
-| 3 | 0.176 | 0.20 | 0.189 |
+| 3 | 0.176 | 0.200 | 0.189 |
 
 For more information details, I invite you to read the article referenced below. Thanks for reading!
 
