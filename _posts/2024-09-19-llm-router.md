@@ -238,23 +238,23 @@ Now, we calculate the difference between the labels $y_i^{trans}(t)$ for all pai
 
 - For $t = 0.1$:
 
-  - $| y_1^{trans}(0.1) - y_2^{trans}(0.1) | = | 1 - 0| = 1$
-  - $| y_1^{trans}(0.1) - y_3^{trans}(0.1) | = | 1 - 1| = 0$
-  - $| y_2^{trans}(0.1) - y_3^{trans}(0.1) | = | 0 - 1 | = 1$
+  - $\vert y_1^{trans}(0.1) - y_2^{trans}(0.1) \vert = \vert 1 - 0\vert = 1$
+  - $\vert y_1^{trans}(0.1) - y_3^{trans}(0.1) \vert = \vert 1 - 1\vert = 0$
+  - $\vert y_2^{trans}(0.1) - y_3^{trans}(0.1) \vert = \vert 0 - 1 \vert = 1$
   - Average difference for $t = 0.1$: $\frac{1+0+1}{3} = 0.67$
 
 - For $t = 0.2$:
 
-  - $| y_1^{trans}(0.2) - y_2^{trans}(0.2) | = | 1 - 0 | = 1$
-  - $| y_1^{trans}(0.2) - y_3^{trans}(0.2) | = | 1 - 1| = 0$
-  - $| y_2^{trans}(0.2) - y_3^{trans}(0.2) | = | 0 - 1 | = 1$
+  - $\vert y_1^{trans}(0.2) - y_2^{trans}(0.2) \vert = \vert 1 - 0 \vert = 1$
+  - $\vert y_1^{trans}(0.2) - y_3^{trans}(0.2) \vert = \vert 1 - 1\vert = 0$
+  - $\vert y_2^{trans}(0.2) - y_3^{trans}(0.2) \vert = \vert 0 - 1 \vert = 1$
   - Average difference for $t = 0.2$: $\frac{1+0+1}{3} = 0.67$
 
 - For $t = 0.3$:
 
-  - $| y_1^{trans}(0.3) - y_2^{trans}(0.3) | = | 1 - 1 | = 0$
-  - $| y_1^{trans}(0.3) - y_3^{trans}(0.3) | = | 1 - 1 | = 0$
-  - $| y_2^{trans}(0.3) - y_3^{trans}(0.3) | = | 1 - 1 | = 0$
+  - $\vert y_1^{trans}(0.3) - y_2^{trans}(0.3) \vert = \vert 1 - 1 \vert = 0$
+  - $\vert y_1^{trans}(0.3) - y_3^{trans}(0.3) \vert = \vert 1 - 1 \vert = 0$
+  - $\vert y_2^{trans}(0.3) - y_3^{trans}(0.3) \vert = \vert 1 - 1 \vert = 0$
   - Average difference for $t = 0.3$: $\frac{0+0+0}{3} = 0$
 
 **Step 3: Choosing $t^*$**
