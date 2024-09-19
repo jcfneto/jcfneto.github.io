@@ -186,15 +186,19 @@ There are three different router types proposed: deterministic, probabilistic, a
 
 The probabilistic router with data transformation $r_{trans}$ introduces the "relaxation" threshold $t$ to handle scenarios where the quality difference between the models is significant. This allows the smaller model to be used even when its response isn’t identical to the larger model’s, but is close enough within the margin $t$. The equation that defines the transformed probabilistic label is:
 
+<div>
 $$
 y_{i}^{trans} (t) = Pr[q(S(x_i)) \geq q(L(x_i)) - t]
 $$
+</div>
 
 The larger $t$ is, the greater the tolerance for the quality difference between the two models. The optimal value for $t$ is found by maximizing the paired average difference between the transformed labels, aiming to distinguish as clearly as possible between the queries that should be routed to the smaller or larger models. This is defined by the following equation:
 
+<div>
 $$
 t^* = \arg \max_t \frac{1}{N^2} \sum_{(i,j)} \left| y_i^{\text{trans}}(t) - y_j^{\text{trans}}(t) \right|
 $$
+</div>
 
 With this, it’s possible to find the optimal value of $t$ that balances response quality and cost. If the idea isn’t entirely clear yet, let me explain with the following scenario:
 
@@ -262,9 +266,11 @@ Once $t^*$ is chosen, the router uses this parameter to train a probabilistic mo
 
 The loss function used to train the router with these probabilistic labels is given by:
 
+<div>
 $$
 \mathcal{L}(w) = -\frac{1}{N} \sum_{i=1}^{N} \left( y_i^{\text{trans}}(t^*) \log(p_w(x_i)) + (1 - y_i^{\text{trans}}(t^*)) \log(1 - p_w(x_i)) \right)
 $$
+</div>
 
 This function minimizes the difference between the router’s predicted value $p_w(x_i)$ and the transformed label $y_i^{trans}(t^*)$, adjusting the model so that it can correctly predict when a query can be routed to the smaller model without compromising quality.
 
