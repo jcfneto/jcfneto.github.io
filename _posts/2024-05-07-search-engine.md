@@ -38,7 +38,7 @@ Search engines can be defined, according to (Croft et al. 2010), as the use of i
 
 Term Frequency – Inverse Document Frequency (TF-IDF) is a technique within vector modeling that produces a vector representation of a text, and this strategy is based on weights. The TF component is based on the frequency of each word in each document in the collection, while the IDF component relates to the number of documents in which a word appears (Croft et al. 2010).
 
-A document can be represented by the vector $$\vec{d_j} = (w_{1,j}, w_{2,j},..., w_{i,j})$$, where the $$tf$$ component of term $$k_i$$ in document $$d_j$$ can be obtained by:
+A document can be represented by the vector $\vec{d_j} = (w_{1,j}, w_{2,j},..., w_{i,j})$, where the $tf$ component of term $k_i$ in document $d_j$ can be obtained by:
 
 <div>
 $$
@@ -51,7 +51,7 @@ $$
 $$
 </div>
 
-Where $$f_{i,j}$$ represents the occurrence frequency of a term $$k_i$$ in document $$d_j$$. The IDF can be obtained by:
+Where $f_{i,j}$ represents the occurrence frequency of a term $k_i$ in document $d_j$. The IDF can be obtained by:
 
 <div>
 $$
@@ -61,7 +61,7 @@ $$
 $$
 </div>
 
-Where $$N$$ is the total number of documents in a collection, and $$n_i$$ is the number of documents where term $$k_i$$ appears. Therefore, the combination of the TF and IDF components produces weights as shown in the following equation:
+Where $N$ is the total number of documents in a collection, and $n_i$ is the number of documents where term $k_i$ appears. Therefore, the combination of the TF and IDF components produces weights as shown in the following equation:
 
 <div>
 $$
