@@ -2,10 +2,11 @@
 title: "Cost vs Efficiency: LLM-Routing"
 date: 2024-09-19
 tags: [nlp, llm, llm-router]
-# header:
-#   overlay_image: "/images/..."
 excerpt: "Reducing cost and maintaining quality is possible"
 use_math: true
+header:
+  overlay_image: https://wallpapers.com/images/high/plain-black-background-ms6uthqmbsf3weim.webp
+  overlay_filter: 0.5
 ---
 
 Nowadays, we have access to a wide range of Small Language Models (SMLs) and Large Language Models (LLMs), each with their own strengths and weaknesses. Because of this, it’s essential to choose the right model for the task at hand. Ideally, you want to strike a balance between cost and performance, aiming for a satisfactory level of quality while keeping expenses low.
