@@ -335,7 +335,9 @@ To further address data sparsity, two data augmentation techniques are used. The
 Matrix factorization aims to capture the low-dimensional structure of interactions between queries and models. In this case, the scoring function $s(M_w, q)$ is used to represent the quality of the responses from model $M_w$ to query $q$. If model $M_w$ is better than $M_l$, we expect that $s(M_w, q) \gt s(M_l, q)$. This relationship is modeled using a sigmoid function $\sigma$, resulting in the probability of a win:
 
 <div>
+$$
 P(\text{win}_{M_w} \mid q) = \sigma (s(M_w, q) - s(M_l, q))
+$$
 </div>
 
 This scoring function $s$ is modeled using a bilinear function that depends on both the identity of the model and the query. For this, each model is mapped to a vector $v_m$ of dimension $d_m$, and each query is mapped to a vector $v_q$ of dimension $d_q$. The function that defines this score is given by:
