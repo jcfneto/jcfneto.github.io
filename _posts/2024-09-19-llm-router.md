@@ -309,7 +309,7 @@ $$
 $$
 </div>
 
-Here, $D_{\text{pref}}$ denotes the preference dataset, where $l_{i,j}$ represents the outcome of the comparison between two models, $M_i$ and $M_j$, in terms of response quality for a given query $q$. The possible values for $l_{i,j}$ are $\mathcal{L} =$ \{$win_{M_i}, \text{tie}, win_{M_j}$\}.
+Here, $D_{\text{pref}}$ denotes the preference dataset, where $l_{i,j}$ represents the outcome of the comparison between two models, $M_i$ and $M_j$, in terms of response quality for a given query $q$. The possible values for $l_{i,j}$ are $\mathcal{L} =$ \{$\text{win}_{M_i}, \text{tie}, \text{win}_{M_j}$\}.
 
 To evaluate the efficiency of this approach, the authors propose using two metrics: a cost-efficiency metric $c(R_{\alpha}^{bin})$, which measures the percentage of queries routed to the stronger model, and another metric that evaluates response quality $r(R_{\alpha}^{bin})$ to assess the accuracy of the answers.
 
