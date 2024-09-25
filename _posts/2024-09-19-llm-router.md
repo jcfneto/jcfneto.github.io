@@ -151,13 +151,18 @@ Imagine you're developing an educational assistant to help students with general
 <br>
 
 
-Considering that the highest-quality model from the list above is **gpt4o**, it’s worth noting that, upon a quick visual analysis, **gemma2-9B** is the smallest model that still managed to produce reasonable answers, even though it approached them differently. Its responses aligned with reality and the stronger model’s output. So, in a scenario where you're selecting a model based purely on the task, **gemma2-9B** could be a solid choice. It comes with a much lower cost per million tokens compared to **gpt4o** ([input/output at `$0.20`](https://groq.com/pricing/) vs. [input at `$5.00` and output at `$15.00`](https://openai.com/api/pricing/)) while providing sufficient quality for the task at hand.
+Considering that the highest-quality model from the list above is **gpt4o**, it’s worth noting that, upon a quick visual analysis, **gemma2-9B** is the smallest model that still managed to produce reasonable answers, even though it approached them differently. Its responses aligned with reality and the stronger model’s output. So for this scenario, where you are selecting a model based purely on the task, **gemma2-9B** might be a solid choice. It comes with a much lower cost per million tokens compared to **gpt4o** ([input/output at \$0.20](https://groq.com/pricing/) vs. [input at \$5.00 and output at \$15.00](https://openai.com/api/pricing/)) while providing sufficient quality for the task at hand.
 
 If you're not convinced that this is the best way to pick a model, good for you! I believe that in data science, the best approach is to work within the given constraints to achieve the best possible outcome and to be able to defend that decision. So, while the approach outlined here is a strong one if you're constrained to this kind of evaluation, there’s always room for further refinement.
 
 That said, the proposed approach has its limitations: there's a subset of geography questions where the weaker model might fail to provide the right answer—or worse, give a completely incorrect response. In such cases, the trade-off between cost and the quality of answers needs more careful consideration, as the price of a wrong answer could be customer churn and damage to your company’s reputation. A better strategy might be to route only the more complex questions to the best available model while handling simpler queries with the smaller, more cost-effective model. This way, you achieve a smarter balance between cost and quality.
 
-In academic circles, this smarter approach is often referred to as LLM-Router or RouteLLM, among other names. In the following sections, I'll present some of the most efficient LLM routing strategies, drawing from three key papers (Hybrid LLM, RouteLLM, and RouterBench). If you want to dive deeper into the topic, I highly recommend reading the full papers.
+In academic circles, this smarter approach is often referred to as LLM-Router or RouteLLM, among other names. In the following sections, I'll present some of the most efficient LLM routing strategies, drawing from two papers ([Hybrid LLM](https://arxiv.org/pdf/2404.14618) and [RouteLLM](https://arxiv.org/pdf/2406.18665)). If you want to dive deeper into the topic, I highly recommend reading the full papers.
+
+Next, I will introduce two approaches for routing queries between language models, utilizing mathematical notations extensively to enhance understanding. I believe it’s crucial—especially if you’re a data scientist—to grasp the fundamentals of the techniques you're applying, rather than just being someone who pushes buttons or connects boxes.
+
+The following section, [*Hybrid LLM Inference*](https://arxiv.org/pdf/2404.14618), presents a probabilistic router with data transformation, while the subsequent section introduces the [*Matrix Factorization Router*](https://arxiv.org/pdf/2406.18665).
+
 
 ## Hybrid LLM Inference
 
@@ -165,7 +170,7 @@ The idea is straightforward: this approach involves training a router capable of
 
 When we mention "easy queries", we actually mean queries where the smaller model can provide answers without losing quality compared to the larger model.
 
-In this section, we will use the notations introduced in the reference paper to define key elements for understanding this approach. We denote the larger model as $L : \mathcal{X} \to \mathcal{Z}$ and the smaller model as $S : \mathcal{X} \to \mathcal{Z}$, where $\mathcal{X}$ represents the input queries and $\mathcal{Z}$ the possible responses. The router is defined as $r : \mathcal{X} \rightarrow \{0, 1\}$, meaning for a given query $x \in \mathcal{X}$, the router directs it to the smaller model $S(x)$ if $r(x) = 0$, or to the larger model $L(x)$ if $r(x) = 1$.
+We denote the larger model as $L : \mathcal{X} \to \mathcal{Z}$ and the smaller model as $S : \mathcal{X} \to \mathcal{Z}$, where $\mathcal{X}$ represents the input queries and $\mathcal{Z}$ the possible responses. The router is defined as $r : \mathcal{X} \rightarrow \{0, 1\}$, meaning for a given query $x \in \mathcal{X}$, the router directs it to the smaller model $S(x)$ if $r(x) = 0$, or to the larger model $L(x)$ if $r(x) = 1$.
 
 To evaluate this router, two key metrics are used:
 
@@ -270,9 +275,127 @@ The dataset used to train the router was MixInstruct, which contains data for mu
 
 The labels $y_i^{trans} (t)$ for training the router were produced based on the quality gap between the smaller and larger models incorporating the relaxation margin $t$. This margin allows the smaller model to be used when its quality is within an acceptable range compared to the larger model.
 
-To be continued.
+
+
+## Matrix Factorization
+
+In the article, several routing approaches are discussed: Similarity-weighted (SW) ranking, Matrix factorization, BERT classifier, and Causal LLM classifier. However, we will focus solely on matrix factorization, as it yielded the best results in the study.
+
+The core idea remains the same: the router determines which model to use for each query, considering the complexity of the query and the capabilities of each model.
+
+We’ll refer to the stronger model as $M_{strong}$ and the weaker model as $M_{weak}$. The model responsible for routing the queries will be denoted as $R_{\alpha}^{bin}$, where the decision to route a query to the stronger model is based on a probability of success for that model. The routing function is defined as:
+
+<div>
+$$
+R_{\alpha}^{\text{bin}}(q) =
+\begin{cases} 
+    0 & \text{(send to } M_{\text{weak}} \text{)} \quad \text{if} \ P_{\theta}(\text{win}_{M_{\text{strong}}} \mid q) < \alpha \\
+    1 & \text{(send to } M_{\text{strong}} \text{)} \quad \text{otherwise}
+\end{cases}
+$$
+</div>
+
+Where:
+
+- $q ∈ Q$ is the query;
+- $P_{\theta}(\text{win}_{M_{strong}} \mid q)$ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
+- $\alpha$ is a threshold that controls the balance between cost and quality—essentially, the higher the value of $\alpha$, the stricter the requirement to use the stronger model, aiming to reduce costs.
+
+The probability $P_{\theta}(\text{win}_{M_{strong}} \mid q)$ is learned from preference data, where different queries are evaluated by both models, and the choice is recorded based on which model provided the higher-quality answer. This learning process is formalized by the following maximization function:
+
+$$
+\max_{\theta} \sum_{(q, l_{i, j}) \in D_{\text{pref}}} \log P_{\theta}(l_{i,j} \mid q)
+$$
+
+Here, $D_{\text{pref}}$ denotes the preference dataset, where $l_{i,j}$ represents the outcome of the comparison between two models, $M_i$ and $M_j$, in terms of response quality for a given query $q$. The possible values for $l_{i,j}$ are $\mathcal{L} = \{\text{win}_{M_i}, \text{tie}, \text{win}_{M_j}\}.$
+
+To evaluate the efficiency of this approach, the authors propose using two metrics: a cost-efficiency metric $c(R_{\alpha}^{bin})$, which measures the percentage of queries routed to the stronger model, and another metric that evaluates response quality $r(R_{\alpha}^{bin})$ to assess the accuracy of the answers.
+
+
+Based on this, the PGR (Performance Gap Recovered) metric is introduced, which quantifies the router’s performance in relation to the performance gap between the stronger and weaker models. Since PGR alone does not capture the trade-off between quality and cost, the APGR metric is proposed to measure the average performance of the router across different cost thresholds.
+
+$$
+PGR(R_{\alpha}^{\text{bin}}) = \frac{r(R_{\alpha}^{\text{bin}}) - r(M_{\text{weak}})}{r(M_{\text{strong}}) - r(M_{\text{weak}})}
+$$
+
+$$
+APGR(R_{\text{bin}}) = \int_0^1 PGR(R_{\alpha}^{\text{bin}}) \, d(c(R_{\alpha}^{\text{bin}})) \approx \frac{1}{10} \sum_{i=1}^{10} PGR(R_{\alpha_i}^{\text{bin}})
+$$
+
+The training of the router uses preference data from the [*Chatbot Arena*](https://lmarena.ai/), where users compare the responses of two models for each query. The resulting dataset, $D_{arena}$, contains pairs of responses from two models, with a label indicating which model won or if the result was a tie. Due to the sparsity of direct comparisons, the models are grouped into three tiers based on their scores (to understand how these scores are determined, see the [leaderboard](https://lmarena.ai/?leaderboard)): strong, weak, and intermediate models. This grouping increases the variety of comparisons and generally improves the router’s performance.
+
+To further address data sparsity, two data augmentation techniques are used. The first, called Golden-labeled datasets $D_{gold}$, uses automatically labeled data in the form $D_{gold} = \{ (q, a, l_g) \}$, where $q$ is the query and $l_g$ is the label automatically generated from the response $a$. The second, called LLM-judge-labeled datasets $D_{judge}$, generates comparisons between a strong and a weak model using a judge model. This judge model must be a strong model, one that shows high correlation with human preferences (see the [leaderboard](https://lmarena.ai/?leaderboard)).
+
+Matrix factorization aims to capture the low-dimensional structure of interactions between queries and models. In this case, the scoring function $s(M_w, q)$ is used to represent the quality of the responses from model $M_w$ to query $q$. If model $M_w$ is better than $M_l$, we expect that $s(M_w, q) \gt s(M_l, q)$. This relationship is modeled using a sigmoid function $\sigma$, resulting in the probability of a win:
+
+<div>
+P(\text{win}_{M_w} \mid q) = \sigma (s(M_w, q) - s(M_l, q))
+</div>
+
+This scoring function $s$ is modeled using a bilinear function that depends on both the identity of the model and the query. For this, each model is mapped to a vector $v_m$ of dimension $d_m$, and each query is mapped to a vector $v_q$ of dimension $d_q$. The function that defines this score is given by:
+
+$$
+s(M, q) = \mathbf{w}_2^T \left( \mathbf{v}_m \odot \left( \mathbf{W}_1^T \mathbf{v}_q + \mathbf{b} \right) \right)
+$$
+
+Where:
+
+- $v_m$ is the vector representing the model;
+- $v_q$ is the vector representing the query;
+- $W_1$ is the projection matrix that aligns the dimensions of $v_q$ with $v_m$;
+- $w_2$ is the linear regression vector that produces the final scalar score;
+- $\odot$ represents the Hadamard product.
+
+In other words, there is a learned matrix factorization of scores across the set $Q \times M$, allowing the model to capture the relationships between queries and models. As demonstrated in the article, this approach yielded the best results based on the context of the experiments.
+
+Additionally, it can be easily implemented in Python. Below is an example taken from the project's GitHub documentation ([RouteLLM](https://github.com/lm-sys/RouteLLM)).
+
+### 1. Installation:
+
+```bash
+pip install "routellm[serve,eval]"
+```
+
+### 2. Usage
+
+```python
+import os
+from routellm.controller import Controller
+
+# Set your API keys for OpenAI and Anyscale
+os.environ["OPENAI_API_KEY"] = "sk-XXXXXX"
+# Replace with your preferred model provider, in this case, we are using Anyscale's Mixtral.
+os.environ["ANYSCALE_API_KEY"] = "esecret_XXXXXX"
+
+# Initialize the Controller with the matrix factorization (mf) router
+client = Controller(
+  routers=["mf"],
+  strong_model="gpt-4-1106-preview",
+  weak_model="anyscale/mistralai/Mixtral-8x7B-Instruct-v0.1",
+)
+
+# Use the chat completion method to generate a response using the MF router
+response = client.chat.completions.create(
+  # This specifies the MF router with a cost threshold of 0.11593
+  model="router-mf-0.11593",
+  messages=[
+    {"role": "user", "content": "Hello!"}
+  ]
+)
+```
+
+## Conclusion
+
+This post provided a more detailed explanation of only one approach from each reference article, but as mentioned earlier, these articles also present other methods that might be useful to add to your toolbox.
+
+Personally, I see more advantages in the matrix factorization approach due to its model-agnostic nature. This allows you to swap between strong and weak models without sacrificing the balance between quality and cost in routing. Additionally, the authors have made the router available in a library, which is a great benefit. However, it's important to note that both approaches come with a cost to train the router, which needs to be considered and factored into the overall savings these methods can provide.
+
+
+If you have any questions, comments, or corrections, feel free to reach out to me on LinkedIn.
 
 
 ## References
 
 [Ding, D., Mallick, A., Wang, C., Sim, R., Mukherjee, S., Ruhle, V., ... & Awadallah, A. H. (2024). Hybrid LLM: Cost-efficient and quality-aware query routing. arXiv preprint arXiv:2404.14618.](https://arxiv.org/pdf/2404.14618)
+
+[Ong, I., Almahairi, A., Wu, V., Chiang, W. L., Wu, T., Gonzalez, J. E., ... & Stoica, I. (2024). Routellm: Learning to route llms with preference data. arXiv preprint arXiv:2406.18665.](https://arxiv.org/pdf/2406.18665)
