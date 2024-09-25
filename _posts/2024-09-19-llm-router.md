@@ -298,10 +298,10 @@ $$
 Where:
 
 - $q ∈ Q$ is the query;
-- $ P_{\theta}(\text{win}_{M_{\text{strong}}} \vert q) $ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
+- $ P_{\theta}(win_{M_{\text{strong}}} \vert q) $ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
 - $\alpha$ is a threshold that controls the balance between cost and quality—essentially, the higher the value of $\alpha$, the stricter the requirement to use the stronger model, aiming to reduce costs.
 
-The probability $P_{\theta}(\text{win}_{M_{\text{strong}}} \vert q)$ is learned from preference data, where different queries are evaluated by both models, and the choice is recorded based on which model provided the higher-quality answer. This learning process is formalized by the following maximization function:
+The probability $P_{\theta}(win_{M_{\text{strong}}} \vert q)$ is learned from preference data, where different queries are evaluated by both models, and the choice is recorded based on which model provided the higher-quality answer. This learning process is formalized by the following maximization function:
 
 <div>
 $$
@@ -309,7 +309,7 @@ $$
 $$
 </div>
 
-Here, $D_{\text{pref}}$ denotes the preference dataset, where $l_{i,j}$ represents the outcome of the comparison between two models, $M_i$ and $M_j$, in terms of response quality for a given query $q$. The possible values for $l_{i,j}$ are $\mathcal{L} =$ \{$\text{win}_{M_i}, \text{tie}, \text{win}_{M_j}$\}.
+Here, $D_{\text{pref}}$ denotes the preference dataset, where $l_{i,j}$ represents the outcome of the comparison between two models, $M_i$ and $M_j$, in terms of response quality for a given query $q$. The possible values for $l_{i,j}$ are $\mathcal{L} =$ \{$win_{M_i}, \text{tie}, win_{M_j}$\}.
 
 To evaluate the efficiency of this approach, the authors propose using two metrics: a cost-efficiency metric $c(R_{\alpha}^{bin})$, which measures the percentage of queries routed to the stronger model, and another metric that evaluates response quality $r(R_{\alpha}^{bin})$ to assess the accuracy of the answers.
 
