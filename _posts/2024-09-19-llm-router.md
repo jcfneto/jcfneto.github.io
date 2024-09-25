@@ -298,10 +298,10 @@ $$
 Where:
 
 - $q ∈ Q$ is the query;
-- $ P_{\theta}(\text{win}_{M_{strong}} \mid q) $ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
+- $ P_{\theta}(\text{win}_{M_{\text{strong}}} \mid q) $ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
 - $\alpha$ is a threshold that controls the balance between cost and quality—essentially, the higher the value of $\alpha$, the stricter the requirement to use the stronger model, aiming to reduce costs.
 
-The probability $P_{\theta}(\text{win}_{M_{strong}} \mid q)$ is learned from preference data, where different queries are evaluated by both models, and the choice is recorded based on which model provided the higher-quality answer. This learning process is formalized by the following maximization function:
+The probability $P_{\theta}(\text{win}_{M_{\text{strong}}} \mid q)$ is learned from preference data, where different queries are evaluated by both models, and the choice is recorded based on which model provided the higher-quality answer. This learning process is formalized by the following maximization function:
 
 <div>
 $$
