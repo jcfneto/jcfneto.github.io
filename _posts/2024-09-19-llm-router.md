@@ -298,14 +298,16 @@ $$
 Where:
 
 - $q ∈ Q$ is the query;
-- $P_{\theta}(\text{win}_{M_{strong}} \mid q)$ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
+- $ P_{\theta}(\text{win}_{M_{strong}} \mid q) $ represents the probability that the stronger model $M_{strong}$ will provide a superior answer compared to the weaker model $M_{weak}$ for the query $q$;
 - $\alpha$ is a threshold that controls the balance between cost and quality—essentially, the higher the value of $\alpha$, the stricter the requirement to use the stronger model, aiming to reduce costs.
 
 The probability $P_{\theta}(\text{win}_{M_{strong}} \mid q)$ is learned from preference data, where different queries are evaluated by both models, and the choice is recorded based on which model provided the higher-quality answer. This learning process is formalized by the following maximization function:
 
+<div>
 $$
 \max_{\theta} \sum_{(q, l_{i, j}) \in D_{\text{pref}}} \log P_{\theta}(l_{i,j} \mid q)
 $$
+</div>
 
 Here, $D_{\text{pref}}$ denotes the preference dataset, where $l_{i,j}$ represents the outcome of the comparison between two models, $M_i$ and $M_j$, in terms of response quality for a given query $q$. The possible values for $l_{i,j}$ are $\mathcal{L} = \{\text{win}_{M_i}, \text{tie}, \text{win}_{M_j}\}.$
 
@@ -314,13 +316,17 @@ To evaluate the efficiency of this approach, the authors propose using two metri
 
 Based on this, the PGR (Performance Gap Recovered) metric is introduced, which quantifies the router’s performance in relation to the performance gap between the stronger and weaker models. Since PGR alone does not capture the trade-off between quality and cost, the APGR metric is proposed to measure the average performance of the router across different cost thresholds.
 
+<div>
 $$
 PGR(R_{\alpha}^{\text{bin}}) = \frac{r(R_{\alpha}^{\text{bin}}) - r(M_{\text{weak}})}{r(M_{\text{strong}}) - r(M_{\text{weak}})}
 $$
+</div>
 
+<div>
 $$
 APGR(R_{\text{bin}}) = \int_0^1 PGR(R_{\alpha}^{\text{bin}}) \, d(c(R_{\alpha}^{\text{bin}})) \approx \frac{1}{10} \sum_{i=1}^{10} PGR(R_{\alpha_i}^{\text{bin}})
 $$
+</div>
 
 The training of the router uses preference data from the [*Chatbot Arena*](https://lmarena.ai/), where users compare the responses of two models for each query. The resulting dataset, $D_{arena}$, contains pairs of responses from two models, with a label indicating which model won or if the result was a tie. Due to the sparsity of direct comparisons, the models are grouped into three tiers based on their scores (to understand how these scores are determined, see the [leaderboard](https://lmarena.ai/?leaderboard)): strong, weak, and intermediate models. This grouping increases the variety of comparisons and generally improves the router’s performance.
 
@@ -334,9 +340,11 @@ P(\text{win}_{M_w} \mid q) = \sigma (s(M_w, q) - s(M_l, q))
 
 This scoring function $s$ is modeled using a bilinear function that depends on both the identity of the model and the query. For this, each model is mapped to a vector $v_m$ of dimension $d_m$, and each query is mapped to a vector $v_q$ of dimension $d_q$. The function that defines this score is given by:
 
+<div>
 $$
 s(M, q) = \mathbf{w}_2^T \left( \mathbf{v}_m \odot \left( \mathbf{W}_1^T \mathbf{v}_q + \mathbf{b} \right) \right)
 $$
+</div>
 
 Where:
 
