@@ -15,9 +15,9 @@ first, to explain why i prefer writing over other forms of communication, you mu
 
 beautiful right?
 
-if you still don’t understand, let me explain: at any given moment, my mind is a jumble of tangled thoughts, making it difficult to follow a single line of reasoning. it’s hard to process what i’m thinking, figure out what i need to say next, or even decide whether I like something. if the main idea i need to focus on is subjective, there’s a good chance my brain will freeze. believe me, it’s chaotic. but don’t get me wrong: i’m fully functional. that’s why I prefer writing, because i don’t really mind how much time it takes.
+if you still don’t understand, let me explain: at any given moment, my mind is a jumble of tangled thoughts, making it difficult to follow a single line of reasoning. it’s hard to process what i’m thinking, figure out what i need to say next, or even decide whether i like something. if the main idea i need to focus on is subjective, there’s a good chance my brain will freeze. believe me, it’s chaotic. but don’t get me wrong: i’m fully functional. that’s why i prefer writing, because i don’t really mind how much time it takes.
 
-the second reason is that I need to improve my english writing skills. after I finish writing, I look for corrections and ways to improve, and by doing this, I get better. make sense?
+the second reason is that i need to improve my english writing skills. after i finish writing, i look for corrections and ways to improve, and by doing this, i get better. make sense?
 
 the third reason is to reinforce my learning by trying to share what i’ve learned with others.
 
