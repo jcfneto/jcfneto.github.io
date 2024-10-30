@@ -1,5 +1,5 @@
 ---
-title: "Temperature and top-k scaling"
+title: "Temperature scaling and top-k sampling"
 date: 2024-10-30
 tags: [nlp, llm, python, hyperparameters]
 excerpt: "What is it and how to calculate it"
